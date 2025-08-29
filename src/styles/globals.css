@@ -1,0 +1,19 @@
+:root {
+  /* Font */
+  --font-primary: 'Nunito Sans', sans-serif;
+
+  /* Font weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  /* Font sizes */
+  --fs-small: 0.8rem;
+  --fs-medium: 1rem;
+  --fs-large: 1.5rem;
+  --fs-xlarge: 2rem;
+
+  /* Line heights */
+  --lh-normal: 1.6;
+  --lh-heading: 1.2;
+}
