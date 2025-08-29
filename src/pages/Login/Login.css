@@ -1,0 +1,228 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --login-bg-color: #3F8CFF;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+
+}
+
+/* atribute end */
+
+.login__wrapper {
+  padding: 25px 40px;
+  background-color: #F4F9FD;
+  height: 100vh;
+}
+
+.Login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.left {
+  background-color: var(--login-bg-color);
+  width: 50%;
+  padding: 60px 94px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
+}
+
+.logo__img {
+  display: flex;
+  align-items: center;
+  padding-right: 150px;   
+  gap: 30px;
+
+}
+
+.logo__img p {
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 30px;
+  line-height: 100%;
+  color: white;
+
+}
+
+.left h2 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 56px;
+  color: white;
+}
+
+/* left end */
+
+.right {
+  background-color: #FFFFFF;
+  width: 50%;
+  padding: 115px 140px 204px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 33px;
+}
+
+.right_title {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 100%;
+  text-align: center;
+
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.Email_Address {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+}
+
+.Email_Address small {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  color: #7D8592;
+
+}
+
+.Email_Address input {
+  border: 1px solid #D8E0F0;
+  border-radius: 14px;
+  padding: 13px 18px;
+  width: 403px;
+  box-shadow: 0px 1px 2px 0px #B8C8E039;
+
+}
+
+
+.Password {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+}
+
+.Password small {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  color: #7D8592;
+
+}
+
+.Password input {
+  border: none;
+  border-radius: 14px;
+  padding: 13px 18px;
+  width: 403px;
+  outline: none;
+
+}
+.Password input:focus, .Email_Address input:focus {
+  border-color: none;
+}
+.Password div {
+  border: 1px solid #D8E0F0;
+  border-radius: 14px;
+  padding: 0px 10px;
+  width: 403px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 1px 2px 0px #B8C8E039;
+
+}
+
+.check__wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 403px;
+
+}
+
+.check {
+  display: flex;
+  gap: 15px;
+
+}
+
+.check small {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  color: #7D8592;
+
+}
+
+.check__wrapper p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  color: #7D8592;
+
+}
+
+/* form end */
+
+.right__button {
+  background: #3F8CFF;
+  color: white;
+  box-shadow: 0px 6px 12px 0px #3F8CFF43;
+  padding: 13px;
+  width: 170px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  
+}
+.right__button:hover {
+ transition: 0.3s;
+  background-color: #3f8cffea;
+}
+
+.forget_password {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  text-align: center;
+  color: #3F8CFF;
+  cursor: pointer;
+
+}
