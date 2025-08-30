@@ -7,7 +7,9 @@ import AddTaskModal from './components/addTaskModal/AddTaskModal';
 import AddProjectModal from './components/addProjectModal/AddProjectModal';
 import Login from './pages/Login/Login';
 import './components/styles/global.css';
-
+import Calendar from './pages/calendar/Calendar';
+import Dashboard from './pages/dashboard/Dashboard';
+import './App.css';
 export default function App() {
   const [isTaskModalOpen, setIsTaskModalOpen] = useState(false);
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
@@ -40,15 +42,15 @@ export default function App() {
 
   return (
     <div className="app">
-      {/* Sidebar */}
       <Sidebar onLogout={handleLogout} />
-
       {/* Main content */}
       <div className="main">
         <Header />
+        {/* <Calendar /> */}
+        <Dashboard />
         <div className="main-content">
-          <ProjectDetails />
-          <TasksSection onAddTask={() => setIsTaskModalOpen(true)} />
+          {/* <ProjectDetails /> */}
+          {/* <TasksSection onAddTask={() => setIsTaskModalOpen(true)} /> */}
         </div>
       </div>
 
