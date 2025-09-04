@@ -1,0 +1,149 @@
+.login-page4{
+  padding: 0px 40px 20px 20px;
+  background: #F4F9FD;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  gap: 30px;
+}
+.login-page-left4{
+  background: #3F8CFF;
+  border-radius: 20px;
+  width: 416px;
+  height: 100%;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: start;
+}
+.progress-bar4{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.progress-bar4>h2{
+  font-size: 36px;
+  font-weight: 700;
+  color: white;
+}
+.progress-check4{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  width: 26px;
+}
+.progress-check4>div:not(:first-child):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)):not(:nth-child(5)):not(:nth-child(6)):not(:nth-child(7)):not(:nth-child(8)){
+  opacity: 45%;
+}
+.circle4:first-child{
+  background: white;
+}
+.circle4:nth-child(3){
+  background: white;
+}
+.circle4:nth-child(5){
+  background: white;
+}
+.circle4:nth-child(7){
+  background: #79afff;
+}
+.circle4{
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: white solid 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #3F8CFF;
+}
+.column4{
+  width: 2px;
+  height: 26px;
+  background: white;
+}
+.progress-ul4{
+  display: flex;
+  flex-direction: column;
+  gap: 37px;
+}
+.progress-ul4 li{
+  font-size: 18px;
+  color: white;
+}
+.progress-ul4>li:not(:first-child):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)){
+  opacity: 45%;
+}
+.progress-bar4>div{
+  display: flex;
+  gap: 22px;
+}
+.add-members{
+  width: 100%;
+  padding-left: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #3F8CFF;
+  font-weight: 500;
+}
+.add-members span{
+  line-height: 0;
+}
+.add-members :first-child{
+  font-size: 25px;
+  font-weight: 700;
+}
+
+
+
+/* members */
+.added-members{
+  width: 403px;
+  display: flex;
+  flex-direction: column;
+  max-height: 214px;
+  overflow-y: auto;
+}
+.added-members>li{
+  border-top: 2px solid rgb(154, 152, 152);
+  padding: 10px 0;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  color: rgb(154, 152, 152);
+}
+.added-members>li>i{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: rgb(223, 222, 222);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(154, 152, 152);
+}
+.spanish{
+  overflow-x: hidden;
+  width: 290px;
+}
+.del{
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+}
+.del:hover{
+  background: rgb(243, 80, 80);
+  color: white;
+}
+.del:active{
+  transform: scale(0.99);
+}

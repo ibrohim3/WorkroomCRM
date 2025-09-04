@@ -1,0 +1,12 @@
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  /* Change 'white' to your background color */
+  -webkit-text-fill-color: #000 !important;
+  /* Change text color */
+  transition: background-color 5000s ease-in-out 0s;
+  /* Prevent flicker */
+}
+
+button:hover {
+  opacity: 80%;
+}

@@ -1,13 +1,18 @@
 /* ===== Layout ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .app {
   display: flex;
   justify-content: space-between;
-  height: 100vh;
+  height: 100%;
   background: #f9fafb;
 }
-.sidebar {
-    width: 250px;
-}
+/* .Sidebar {
+  overflow-y: scroll;
+} */
 .main {
   flex: 1;
   display: flex;
@@ -17,6 +22,6 @@
 .main-content {
   display: flex;
   flex: 1;
-  padding: 1.5rem;
+  /* padding: 1.5rem; */
   gap: 1.5rem;
 }
