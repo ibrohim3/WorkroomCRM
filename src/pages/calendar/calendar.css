@@ -7,7 +7,7 @@ body {
   display: flex;
 }
 
-.sidebar {
+/* .sidebar {
   width: 220px;
   background: #fff;
   height: 100vh;
@@ -16,25 +16,25 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
+} */
 
 .main {
   flex: 1;
-  padding: 20px 40px;
+  padding: 20px 20px;
 }
 
-.topbar {
+/* .topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
+} */
 
-.search {
+/* .search {
   padding: 8px 15px;
   width: 200px;
   border: 1px solid #ddd;
   border-radius: 20px;
-}
+} */
 
 .user {
   display: flex;
@@ -42,12 +42,12 @@ body {
   gap: 15px;
 }
 
-.user img {
+/* .user img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
-}
+} */
 
 .calendar-container .header {
   display: flex;

@@ -1,109 +1,45 @@
 /* ===== Global reset ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: sans-serif;
-}
-
-/* body {
-  background: #f9fafb;
-  color: #111827;
-} */
-
 /* ===== Header ===== */
- .main-header {
+/* .main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 1.5rem;
-  /* display: block; */
-  /* margin: 0 auto; */
-  /* background: #fff; */
-  /* box-shadow: 0 2px 6px rgba(0,0,0,0.1); */
 }
-
 .main-header input {
   width: 33%;
   border: 1px solid #d1d5db;
   border-radius: 0.5rem;
   padding: 0.5rem 0.75rem;
 }
-
 .main-header .user {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-}
-
-/* ===== Sidebar ===== */
-/* .sidebar nav a {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    color: #374151;
-    text-decoration: none;
-  }
-  
-  .sidebar nav a:hover {
-    background: #eff6ff;
-  }
-  
-  .sidebar nav a.active {
-    color: #2563eb;
-  }
-  
-  .sidebar .support {
-    width: 100%;
-    background: #3b82f6;
-    color: #fff;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .sidebar .logout {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #6b7280;
-    cursor: pointer;
-  }
-  
-  .sidebar .logout:hover {
-    color: #ef4444;
-  }
-   */
+} */
 /* ===== Project Details ===== */
-.project-details {
+/* .project-details {
   width: 20rem;
   background: #fff;
   border-radius: 1rem;
   padding: 1.5rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
-
 .project-details p {
   margin-bottom: 0.5rem;
 }
-
 .project-details .avatars {
   display: flex;
   gap: 0.5rem;
   margin-bottom: 0.75rem;
 }
-
 .project-details .avatars img {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
 }
-
 /* ===== Tasks Section ===== */
-.tasks-section {
+/* .tasks-section {
   flex: 1;
   background: #fff;
   border-radius: 1rem;
@@ -113,12 +49,10 @@
   align-items: center;
   justify-content: center;
 }
-
 .tasks-section img {
   width: 16rem;
   margin-bottom: 1.5rem;
 }
-
 .tasks-section button {
   background: #3b82f6;
   color: #fff;
@@ -126,10 +60,9 @@
   border-radius: 0.5rem;
   border: none;
   cursor: pointer;
-}
-
+} */ */
 /* ===== Modals ===== */
-.modal-overlay {
+/* .modal-overlay {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.3);
@@ -137,7 +70,6 @@
   align-items: center;
   justify-content: center;
 }
-
 .modal {
   background: #fff;
   border-radius: 1rem;
@@ -146,26 +78,22 @@
   border: 2px solid #bfdbfe;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
-
 .modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.5rem;
 }
-
 .modal-header h2 {
   font-size: 1.25rem;
   font-weight: 600;
 }
-
 .modal form,
 .modal .form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-
 input,
 select,
 textarea {
@@ -175,20 +103,17 @@ textarea {
   padding: 0.5rem 0.75rem;
   outline: none;
 }
-
 .modal input:focus,
 .modal select:focus,
 .modal textarea:focus {
   border-color: #3b82f6;
   box-shadow: 0 0 0 2px #93c5fd;
 }
-
 .modal-footer {
   display: flex;
   justify-content: flex-end;
   margin-top: 1.5rem;
 }
-
 .modal-footer button {
   background: #3b82f6;
   color: #fff;
@@ -197,29 +122,24 @@ textarea {
   border: none;
   cursor: pointer;
 }
-
 .modal-footer button:hover {
   background: #2563eb;
-}
-
+} */
 /* ===== Image grid (in AddProjectModal) ===== */
 .image-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
 }
-
 .image-grid button {
   border: 1px solid #d1d5db;
   border-radius: 0.5rem;
   padding: 0.25rem;
   cursor: pointer;
 }
-
 .image-grid button.active {
   outline: 2px solid #3b82f6;
 }
-
 .image-grid img {
   width: 100%;
   height: 3.5rem;
