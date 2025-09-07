@@ -1,25 +1,25 @@
-import React, { useState, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './LoginPage1.css';
-import sitelogo from '../../assets/icons/logo.svg';
-import arrow from '../../assets/icons/white.svg';
+import React, { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import "./LoginPage1.css";
+import sitelogo from "../../assets/icons/logo.svg";
+import arrow from "../../assets/icons/white.svg";
 
 function LoginPage() {
   const navigate = useNavigate();
   const [passwordVisible, setPasswordVisible] = useState(false);
-  const [countryCode, setCountryCode] = useState('+998');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [countryCode, setCountryCode] = useState("+998");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const inputsRef = useRef([]);
-  const [code, setCode] = useState(['', '', '', '']);
+  const [code, setCode] = useState(["", "", "", ""]);
 
-  const [smsCode, setSmsCode] = useState('0000');
+  const [smsCode, setSmsCode] = useState("0000");
 
   const generateCode = () => {
     setTimeout(() => {
       const num = Math.floor(Math.random() * 10000);
-      const newCode = num.toString().padStart(4, '0');
+      const newCode = num.toString().padStart(4, "0");
       setSmsCode(newCode);
     }, 2000);
   };
@@ -41,7 +41,7 @@ function LoginPage() {
   };
 
   const handleChange = (e, index) => {
-    let value = e.target.value.replace(/\D/g, ''); // only numbers
+    let value = e.target.value.replace(/\D/g, ""); // only numbers
 
     if (value.length > 1) value = value.slice(-1); // keep only 1 digit
 
@@ -55,7 +55,7 @@ function LoginPage() {
   };
 
   const handleKeyDown = (e, index) => {
-    if (e.key === 'Backspace' && !code[index] && index > 0) {
+    if (e.key === "Backspace" && !code[index] && index > 0) {
       inputsRef.current[index - 1].focus();
     }
   };
@@ -63,32 +63,32 @@ function LoginPage() {
   const handleNext = () => {
     // check required fields
     if (!phoneNumber) {
-      alert('⚠️ Please enter your phone number.');
+      alert("⚠️ Please enter your phone number.");
       return;
     }
 
-    if (code.some((digit) => digit === '')) {
-      alert('⚠️ Please enter the full 4-digit SMS code.');
+    if (code.some((digit) => digit === "")) {
+      alert("⚠️ Please enter the full 4-digit SMS code.");
       return;
     }
 
     if (!email) {
-      alert('⚠️ Please enter your email.');
+      alert("⚠️ Please enter your email.");
       return;
     }
 
     if (!password) {
-      alert('⚠️ Please create a password.');
+      alert("⚠️ Please create a password.");
       return;
     }
 
     // all inputs filled
-    navigate('/page2');
+    navigate("/page2");
   };
 
   const handlePhone = () => {
     if (!phoneNumber) {
-      alert('⚠️ Please enter your phone number.');
+      alert("⚠️ Please enter your phone number.");
       return;
     } else {
       returnMessage();
@@ -157,12 +157,12 @@ function LoginPage() {
                   <input
                     type="tel"
                     id="num-inp"
-                    value={countryCode + ' ' + phoneNumber}
+                    value={countryCode + " " + phoneNumber}
                     onChange={(e) => {
                       const entered = e.target.value
-                        .replace(countryCode, '')
+                        .replace(countryCode, "")
                         .trim();
-                      const onlyNums = entered.replace(/\D/g, '');
+                      const onlyNums = entered.replace(/\D/g, "");
                       setPhoneNumber(onlyNums);
                     }}
                   />
@@ -196,8 +196,8 @@ function LoginPage() {
             <div className="main-notice">
               <i className="fa-solid fa-circle-exclamation"></i>
               <p>
-                SMS was sent to your number {countryCode}{' '}
-                {phoneNumber || 'xxx-xxx-xxx'}
+                SMS was sent to your number {countryCode}{" "}
+                {phoneNumber || "xxx-xxx-xxx"}
                 <br />
                 It will be valid for 01:25 mins
               </p>
@@ -219,17 +219,17 @@ function LoginPage() {
                 <label htmlFor="password">Create Password</label>
                 <div>
                   <input
-                    type={passwordVisible ? 'text' : 'password'}
+                    type={passwordVisible ? "text" : "password"}
                     id="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
                   <i
                     className={`fa-solid ${
-                      passwordVisible ? 'fa-eye' : 'fa-eye-slash'
+                      passwordVisible ? "fa-eye" : "fa-eye-slash"
                     }`}
                     onClick={togglePassword}
-                    style={{ cursor: 'pointer' }}
+                    style={{ cursor: "pointer" }}
                   ></i>
                 </div>
               </div>

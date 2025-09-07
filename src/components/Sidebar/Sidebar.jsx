@@ -1,25 +1,34 @@
-import React from 'react';
-import './Sidebar.css';
-import { NavLink } from 'react-router-dom';
-import message from '../../assets/images/message.png';
+import React from "react";
+import "./Sidebar.css";
+import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import message from "../../assets/images/message.png";
+// import Login from "../../features/Login/Login";
+function Sidebar({ onLogout }) {
+  const navigate = useNavigate();
 
-function Sidebar({ handleLogout }) {
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn");
+    if (onLogout) onLogout();
+    navigate("/login");
+  };
+
   return (
     <div className="sidebar__wrapper">
       <div className="Sidebar">
         <ul className="sidebar__path">
-        <img
-          className="sidebar__main__img"
-          src="./Companylogo.png"
-          alt="img"
-          loading="lazy"
-          width={50}
-          height={50}
-        />
+          <img
+            className="sidebar__main__img"
+            src="./Companylogo.png"
+            alt="img"
+            loading="lazy"
+            width={50}
+            height={50}
+          />
 
           <NavLink
-            className={({ isActive }) => (isActive ? 'active' : '')}
-            to={'dashboard'} 
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to={"dashboard"}
           >
             <img
               src="./active.png"
@@ -31,8 +40,8 @@ function Sidebar({ handleLogout }) {
             Dashboard
           </NavLink>
           <NavLink
-            className={({ isActive }) => (isActive ? 'active' : '')}
-            to={'projects'}
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to={"projects"}
           >
             <img
               src="./inactive.png"
@@ -44,8 +53,8 @@ function Sidebar({ handleLogout }) {
             Projects
           </NavLink>
           <NavLink
-            className={({ isActive }) => (isActive ? 'active' : '')}
-            to={'calendar'}
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to={"calendar"}
           >
             <img
               src="./bookbasket.png"
@@ -57,8 +66,8 @@ function Sidebar({ handleLogout }) {
             Calendar
           </NavLink>
           <NavLink
-            className={({ isActive }) => (isActive ? 'active' : '')}
-            to={'vacations'}
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to={"vacations"}
           >
             <img
               src="./sidebar__plane.png"
@@ -70,8 +79,8 @@ function Sidebar({ handleLogout }) {
             Vacations
           </NavLink>
           <NavLink
-            className={({ isActive }) => (isActive ? 'active' : '')}
-            to={'employees'}
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to={"employees"}
           >
             <img
               src="./sidebar__human.png"
@@ -83,8 +92,8 @@ function Sidebar({ handleLogout }) {
             Employees
           </NavLink>
           <NavLink
-            className={({ isActive }) => (isActive ? 'active' : '')}
-            to={'messenger'}
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to={"messenger"}
           >
             <img
               src="./sidebar_message.png"
@@ -96,9 +105,9 @@ function Sidebar({ handleLogout }) {
             Messenger
           </NavLink>
           <NavLink
-            className={({ isActive }) => (isActive ? 'active' : '')}
+            className={({ isActive }) => (isActive ? "active" : "")}
             id="sidebar__active"
-            to={'info Portal'}
+            to={"info Portal"}
           >
             <img
               src="./sidebar__folder.png"
