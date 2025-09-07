@@ -1,0 +1,117 @@
+.calendar-container {
+  /* max-width: 1150px; */
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  user-select: none;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+
+.employee-label {
+  width: 180px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.day-header {
+  width: 28px;
+  height: 28px;
+  text-align: center;
+  font-size: 12px;
+  color: #6b7280;
+  user-select: none;
+}
+
+.employee-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.employee-info {
+  width: 180px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #374151;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.day-cell {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  margin-right: 4px;
+  background-color: #f9fafb; /* Bo‘sh katakcha */
+  border: 1px solid #e5e7eb;
+}
+
+.vacation-approved {
+  background-color: #36cfc9;
+  border-color: #36cfc9;
+}
+
+.vacation-pending {
+  background-color: #b2f5ea;
+  border-color: #b2f5ea;
+}
+
+.sickleave-approved {
+  background-color: #ff4d4f;
+  border-color: #ff4d4f;
+}
+
+.sickleave-pending {
+  background-color: #ffccc7;
+  border-color: #ffccc7;
+}
+
+.workremotely-approved {
+  background-color: #5c6ac4;
+  border-color: #5c6ac4;
+}
+
+.workremotely-pending {
+  background-color: #d6dbf5;
+  border-color: #d6dbf5;
+}
+
+.legend {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: #4b5563;
+}
+
+.legend div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-box {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  display: inline-block;
+}
