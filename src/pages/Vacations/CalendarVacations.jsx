@@ -1,107 +1,116 @@
-import React from 'react';
-import './calendarVacations.css';
-
-const daysInMonth = 30;
+import React from "react";
+import "./calendarVacations.css";
 
 const employees = [
-  {
-    id: 1,
-    name: 'Oscar Holloway',
-    avatar: 'https://randomuser.me/api/portraits/men/10.jpg',
-    leaves: [
-      { day: 1, type: 'vacation', status: 'approved' },
-      { day: 2, type: 'vacation', status: 'approved' },
-      { day: 3, type: 'vacation', status: 'approved' },
-      { day: 12, type: 'workremotely', status: 'approved' },
-      { day: 13, type: 'workremotely', status: 'approved' },
-      { day: 19, type: 'workremotely', status: 'approved' },
-    ],
-  },
-  {
-    id: 2,
-    name: 'Evan Yates',
-    avatar: 'https://randomuser.me/api/portraits/men/20.jpg',
-    leaves: [
-      { day: 3, type: 'sickleave', status: 'pending' },
-      { day: 4, type: 'sickleave', status: 'pending' },
-      { day: 5, type: 'sickleave', status: 'pending' },
-      { day: 20, type: 'vacation', status: 'approved' },
-      { day: 21, type: 'vacation', status: 'approved' },
-    ],
-  },
-  {
-    id: 3,
-    name: 'Lola Zimmerman',
-    avatar: 'https://randomuser.me/api/portraits/women/30.jpg',
-    leaves: [
-      { day: 6, type: 'workremotely', status: 'approved' },
-      { day: 7, type: 'workremotely', status: 'approved' },
-      { day: 8, type: 'workremotely', status: 'approved' },
-      { day: 9, type: 'workremotely', status: 'approved' },
-      { day: 10, type: 'workremotely', status: 'approved' },
-      { day: 11, type: 'workremotely', status: 'approved' },
-    ],
-  },
-  // Qo'shimcha xodimlar ham shu kabi bo'ladi...
+  "Oscar Holloway",
+  "Evan Yates",
+  "Lola Zimmerman",
+  "Tyler Curry",
+  "Sadie Wolfe",
+  "Sean Gibbs",
+  "Corey Watts",
+  "Theodore Shaw",
+  "Edwin Austin",
+  "Thomas Cummings",
+  "Augusta Gordon",
 ];
 
-function CalendarVacations() {
+const daysInMonth = Array.from({ length: 29 }, (_, i) => i + 1);
+
+const statusColors = {
+  sickApproved: "sick-approved",
+  sickPending: "sick-pending",
+  remoteApproved: "remote-approved",
+  remotePending: "remote-pending",
+  vacationApproved: "vacation-approved",
+  vacationPending: "vacation-pending",
+};
+
+const schedule = {
+  // Example: "Oscar Holloway": [{ day: 2, type: "vacationApproved" }, ...]
+  "Oscar Holloway": [
+    { day: 2, type: "vacationApproved" },
+    { day: 3, type: "vacationApproved" },
+    { day: 4, type: "vacationApproved" },
+    { day: 6, type: "vacationApproved" },
+  ],
+  "Lola Zimmerman": [
+    { day: 6, type: "sickApproved" },
+    { day: 7, type: "sickApproved" },
+    { day: 8, type: "sickApproved" },
+    { day: 9, type: "sickApproved" },
+  ],
+  "Tyler Curry": [
+    { day: 10, type: "remoteApproved" },
+    { day: 11, type: "remoteApproved" },
+    { day: 12, type: "remoteApproved" },
+    { day: 13, type: "remoteApproved" },
+    { day: 21, type: "remoteApproved" },
+    { day: 22, type: "remoteApproved" },
+    { day: 23, type: "remoteApproved" },
+  ],
+  // Add more data here based on the image...
+};
+
+const CalendarVacations = () => {
   return (
-    <div className="calendar-container">
-      <div className="header-row">
-        <div className="employee-label">Employees</div>
-        {[...Array(daysInMonth)].map((_, i) => (
-          <div key={i} className="day-header">
-            {i + 1}
+    <div className="schedule-container">
+      <div className="calendar-header">
+        <div className="employee-column-header">Employees</div>
+        <div className="days-header">
+          {daysInMonth.map((day) => (
+            <div key={day} className="day-cell">
+              {day}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="body">
+        {employees.map((employee) => (
+          <div key={employee} className="employee-row">
+            <div className="employee-name">{employee}</div>
+            <div className="schedule-row">
+              {daysInMonth.map((day) => {
+                const dayStatus = schedule[employee]?.find(
+                  (e) => e.day === day
+                );
+                return (
+                  <div
+                    key={day}
+                    className={`day-cell ${
+                      dayStatus ? statusColors[dayStatus.type] : ""
+                    }`}
+                  />
+                );
+              })}
+            </div>
           </div>
         ))}
       </div>
 
-      {employees.map((emp) => (
-        <div key={emp.id} className="employee-row">
-          <div className="employee-info">
-            <img src={emp.avatar} alt={emp.name} className="avatar" />
-            <span>{emp.name}</span>
-          </div>
-
-          {[...Array(daysInMonth)].map((_, dayIdx) => {
-            const leave = emp.leaves.find((l) => l.day === dayIdx + 1);
-            const className = leave
-              ? `day-cell ${leave.type}-${leave.status}`
-              : 'day-cell';
-            return <div key={dayIdx} className={className}></div>;
-          })}
-        </div>
-      ))}
-
       <div className="legend">
         <div>
-          <span className="legend-box vacation-approved"></span> Vacation
-          (Approved)
+          <span className="dot sick-approved"></span> Sick Leave - Approved
         </div>
         <div>
-          <span className="legend-box vacation-pending"></span> Vacation
-          (Pending)
+          <span className="dot sick-pending"></span> Sick Leave - Pending
         </div>
         <div>
-          <span className="legend-box sickleave-approved"></span> Sick Leave
-          (Approved)
+          <span className="dot remote-approved"></span> Work Remotely - Approved
         </div>
         <div>
-          <span className="legend-box sickleave-pending"></span> Sick Leave
-          (Pending)
+          <span className="dot remote-pending"></span> Work Remotely - Pending
         </div>
         <div>
-          <span className="legend-box workremotely-approved"></span> Work
-          remotely (Approved)
+          <span className="dot vacation-approved"></span> Vacation - Approved
         </div>
         <div>
-          <span className="legend-box workremotely-pending"></span> Work
-          remotely (Pending)
+          <span className="dot vacation-pending"></span> Vacation - Pending
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default CalendarVacations;

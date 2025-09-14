@@ -4,25 +4,58 @@
   padding: 0;
   box-sizing: border-box;
 }
-.app {
+h2 {
+  font-weight: 700;
+  font-size: 36px;
+}
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  overflow: hidden;
+}
+.layout {
   display: flex;
   justify-content: space-between;
   height: 100%;
-  background: #f9fafb;
+  background: #f4f9fd;
+  align-items: stretch;
+  min-height: 100vh;
 }
-/* .Sidebar {
-  overflow-y: scroll;
-} */
-.app .main {
+
+.layout .main {
   flex: 1;
   display: flex;
   flex-direction: column;
-  /* padding: 0; */
+  overflow-y: auto;
+}
+.main {
+  flex: 1;
+  padding: 20px 20px;
 }
 
-.main-content {
-  display: flex;
-  flex: 1;
-  /* padding: 1.5rem; */
-  gap: 1.5rem;
+.main::-webkit-scrollbar {
+  width: 10px;
+}
+
+.main::-webkit-scrollbar-track {
+  background: #e6edf5;
+  border-radius: 10px;
+}
+
+.main::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3f8cff, #ffb27d, #fdc748);
+  border-radius: 10px;
+  border: 2px solid #e6edf5;
+}
+
+.main::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #233862, #ed975d, #e5b137);
+}
+
+.main {
+  scrollbar-width: thin;
+  scrollbar-color: #3f8cff #e6edf5;
 }
