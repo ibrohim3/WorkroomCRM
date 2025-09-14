@@ -10,6 +10,12 @@ body {
 
 .sidebar__wrapper {
   display: flex;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.sidebar__wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 .Sidebar a {
@@ -23,16 +29,15 @@ body {
 .Sidebar {
   background-color: #ffffff;
   border-radius: 30px;
-  display: flex;
   margin: 20px 0px 0px 25px;
-  padding: 20px 0px;
+  padding: 30px 0px 100px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 55px;
+  justify-content: space-evenly;
+  gap: 40px;
   width: 220px;
-  height: 100%;
+  height: 110vh;
 }
 
 .Sidebar ul {
@@ -61,7 +66,7 @@ body {
   bottom: 100px;
 }
 
-.Support_wrapper button {
+.Support_wrapper .support-btn {
   box-shadow: 0px 6px 12px 0px #3f8cff43;
   background-color: #3f8cff;
   color: white;
@@ -76,6 +81,18 @@ body {
   top: 100px;
   align-items: center;
   cursor: pointer;
+}
+.sidebar-btns {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 120px;
+  left: -30px;
+}
+.sidebar-btns .logout-btn {
+  border: none;
+  background-color: transparent;
+  margin: 70px 0 20px 0;
 }
 
 .Support_wrapper button:hover {
@@ -104,7 +121,7 @@ body {
 }
 .sidebar__path a.active::before {
   border: 2px;
-  content: '';
+  content: "";
   position: absolute;
   right: -26px;
   top: 0;
@@ -128,19 +145,12 @@ body {
 }
 
 /* sidebar end */
-.header__right__wrapper {
+/* .header__right__wrapper {
   display: flex;
   gap: 25px;
-}
+} */
 
-.site_header {
-  padding: 20px 30px;
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-}
-
-.search__input__wrapper {
+/* .search__input__wrapper {
   box-shadow: 0px 6px 58px 0px #c4cbd61a;
   background-color: #ffffff;
   padding: 12px 19px;
@@ -150,25 +160,25 @@ body {
   align-items: center;
   gap: 5px;
   border-radius: 14px;
-}
+} */
 
-.search__input__wrapper input {
+/* .search__input__wrapper input {
   outline: none;
   border: none;
   font-weight: 500;
   font-size: 16px;
   line-height: 100%;
   color: #000;
-}
+} */
 
-.notification__wrapper {
+/* .notification__wrapper {
   background-color: #ffffff;
   padding: 14px 14px;
   border-radius: 14px;
   height: 50px;
-}
+} */
 
-.header__people {
+/* .header__people {
   background-color: #ffffff;
   border-radius: 15px;
   padding: 12px 14px;
@@ -177,4 +187,4 @@ body {
   align-items: center;
   gap: 15px;
   height: 50px;
-}
+} */

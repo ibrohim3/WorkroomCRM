@@ -1,19 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;700&display=swap');
-body {
-  font-family: var(--font-primary);
-  font-weight: var(--fw-regular);
-  /* line-height: var(--lh-normal); */
-  margin: 0;
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("/fonts/NunitoSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
 }
 
-/* h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-primary);
-  font-weight: var(--fw-bold);
-  line-height: var(--lh-heading);
-  margin: 0 0 1rem 0;
-} */
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("/fonts/NunitoSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
 
-button, a {
-  font-family: var(--font-primary);
-  cursor: pointer;
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("/fonts/NunitoSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
 }

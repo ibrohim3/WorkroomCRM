@@ -1,5 +1,5 @@
-import React from 'react';
-import './calendar.css';
+import React from "react";
+import "./calendar.css";
 
 function Calendar() {
   return (
@@ -7,7 +7,10 @@ function Calendar() {
       <div className="main">
         <div className="header">
           <h2>Calendar</h2>
-          <button className="add-event">+ Add Event</button>
+          <button className="add-event">
+            <span>+ </span>
+            Add Event
+          </button>
         </div>
 
         <div className="calendar">

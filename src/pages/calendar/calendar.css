@@ -7,69 +7,39 @@ body {
   display: flex;
 }
 
-/* .sidebar {
-  width: 220px;
-  background: #fff;
-  height: 100vh;
-  padding: 20px;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-} */
-
-.main {
-  flex: 1;
-  padding: 20px 20px;
-}
-
-/* .topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-} */
-
-/* .search {
-  padding: 8px 15px;
-  width: 200px;
-  border: 1px solid #ddd;
-  border-radius: 20px;
-} */
-
-.user {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-/* .user img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-} */
-
 .calendar-container .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 25px;
+  margin: 20px 0 20px 0px;
 }
 
 .add-event {
+  width: 148px;
+  height: 50px;
   background: #006eff;
   border: none;
-  padding: 10px 15px;
-  color: #fff;
-  border-radius: 8px;
+  padding: 14px 24px;
+  border-radius: 14px;
   cursor: pointer;
+  box-shadow: 0px 6px 12px 0px #3f8cff43;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-
+.add-event span {
+  font-size: 24px;
+  margin-bottom: 3px;
+}
 .calendar {
   background: #fff;
   margin-top: 20px;
   border-radius: 15px;
   padding: 20px;
+  height: 770px;
 }
 
 .month-nav {
@@ -77,11 +47,15 @@ body {
   justify-content: center;
   align-items: center;
   gap: 25px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .month-nav span {
   font-weight: bold;
+  cursor: pointer;
+  color: #3f8cff;
+  font-size: 40px;
+  margin-bottom: 14px;
 }
 
 .weekdays {
@@ -101,7 +75,7 @@ body {
 
 .days div {
   border: 1px solid #eee;
-  min-height: 80px;
+  min-height: 110px;
   padding: 5px;
   position: relative;
 }
