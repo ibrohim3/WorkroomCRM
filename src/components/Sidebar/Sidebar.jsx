@@ -88,7 +88,7 @@ function Sidebar({ onLogout }) {
             )}
           </NavLink>
 
-          <NavLink to="employees">
+          <NavLink to="employes">
             {({ isActive }) => (
               <>
                 <img

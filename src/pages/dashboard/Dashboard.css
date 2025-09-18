@@ -1,9 +1,9 @@
 /* Umumiy layout */
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 .dashboard {
   display: flex;
   justify-content: space-between;

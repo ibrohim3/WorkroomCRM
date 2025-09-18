@@ -4,7 +4,7 @@ import "./calendarVacations.css";
 const employees = [
   "Oscar Holloway",
   "Evan Yates",
-  "Lola Zimmerman",
+  "Lola Zimmermann",
   "Tyler Curry",
   "Sadie Wolfe",
   "Sean Gibbs",
@@ -15,102 +15,84 @@ const employees = [
   "Augusta Gordon",
 ];
 
-const daysInMonth = Array.from({ length: 29 }, (_, i) => i + 1);
+const daysInMonth = 28; // bu joyni o'zingiz moslashingiz mumkin
 
-const statusColors = {
-  sickApproved: "sick-approved",
-  sickPending: "sick-pending",
-  remoteApproved: "remote-approved",
-  remotePending: "remote-pending",
-  vacationApproved: "vacation-approved",
-  vacationPending: "vacation-pending",
-};
-
-const schedule = {
-  // Example: "Oscar Holloway": [{ day: 2, type: "vacationApproved" }, ...]
-  "Oscar Holloway": [
-    { day: 2, type: "vacationApproved" },
-    { day: 3, type: "vacationApproved" },
-    { day: 4, type: "vacationApproved" },
-    { day: 6, type: "vacationApproved" },
-  ],
-  "Lola Zimmerman": [
-    { day: 6, type: "sickApproved" },
-    { day: 7, type: "sickApproved" },
-    { day: 8, type: "sickApproved" },
-    { day: 9, type: "sickApproved" },
-  ],
-  "Tyler Curry": [
-    { day: 10, type: "remoteApproved" },
-    { day: 11, type: "remoteApproved" },
-    { day: 12, type: "remoteApproved" },
-    { day: 13, type: "remoteApproved" },
-    { day: 21, type: "remoteApproved" },
-    { day: 22, type: "remoteApproved" },
-    { day: 23, type: "remoteApproved" },
-  ],
-  // Add more data here based on the image...
-};
-
-const CalendarVacations = () => {
+function DayCells({ rowIndex }) {
   return (
-    <div className="schedule-container">
-      <div className="calendar-header">
-        <div className="employee-column-header">Employees</div>
-        <div className="days-header">
-          {daysInMonth.map((day) => (
-            <div key={day} className="day-cell">
-              {day}
-            </div>
-          ))}
+    <div className="cells-row">
+      {Array.from({ length: daysInMonth }, (_, i) => (
+        <div key={i} className="cell">
+          {/* Bu joyga kerakli badge yoki data qo‘shiladi */}
         </div>
-      </div>
+      ))}
+    </div>
+  );
+}
 
-      <div className="body">
-        {employees.map((employee) => (
-          <div key={employee} className="employee-row">
-            <div className="employee-name">{employee}</div>
-            <div className="schedule-row">
-              {daysInMonth.map((day) => {
-                const dayStatus = schedule[employee]?.find(
-                  (e) => e.day === day
-                );
-                return (
-                  <div
-                    key={day}
-                    className={`day-cell ${
-                      dayStatus ? statusColors[dayStatus.type] : ""
-                    }`}
-                  />
-                );
-              })}
+function CalendarVacation() {
+  return (
+    <div className="schedule-wrap">
+      <div className="schedule-card">
+        <div className="header">
+          <h3>Employee Schedule</h3>
+        </div>
+
+        <div className="main">
+          {/* Sidebar */}
+          <div className="sidebar">
+            <div className="search">
+              Employees <input placeholder="Search" />
+            </div>
+            <ul className="employee-list">
+              {employees.map((name, idx) => (
+                <li key={idx} className="employee-row">
+                  <div className="avatar" />
+                  <div className="emp-name">{name}</div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Grid Area */}
+          <div className="grid-area">
+            <div className="days-head">
+              {Array.from({ length: daysInMonth }, (_, i) => (
+                <div key={i} className="day-cell">
+                  {i + 1}
+                </div>
+              ))}
+            </div>
+
+            <div className="rows">
+              {employees.map((_, idx) => (
+                <div key={idx} className="row">
+                  <DayCells rowIndex={idx} />
+                </div>
+              ))}
+            </div>
+
+            {/* Legend */}
+            <div className="legend">
+              <div>
+                <span className="legend-dot sick approved" /> Sick Leave
+                Approved
+              </div>
+              <div>
+                <span className="legend-dot remote approved" /> Work remotely
+                Approved
+              </div>
+              <div>
+                <span className="legend-dot vacation approved" /> Vacation
+                Approved
+              </div>
+              <div>
+                <span className="legend-dot remote pending" /> Pending
+              </div>
             </div>
           </div>
-        ))}
-      </div>
-
-      <div className="legend">
-        <div>
-          <span className="dot sick-approved"></span> Sick Leave - Approved
-        </div>
-        <div>
-          <span className="dot sick-pending"></span> Sick Leave - Pending
-        </div>
-        <div>
-          <span className="dot remote-approved"></span> Work Remotely - Approved
-        </div>
-        <div>
-          <span className="dot remote-pending"></span> Work Remotely - Pending
-        </div>
-        <div>
-          <span className="dot vacation-approved"></span> Vacation - Approved
-        </div>
-        <div>
-          <span className="dot vacation-pending"></span> Vacation - Pending
         </div>
       </div>
     </div>
   );
-};
-
-export default CalendarVacations;
+}
+export default CalendarVacation;
