@@ -15,28 +15,28 @@ import script2 from "../../assets/icons/script2.svg";
 import rightContentImg from "../../assets/images/right-content-img.png";
 
 function ProjectsMainPage() {
-  const menu = [
-    {
-      icon: '<i class="fa-solid fa-grip"></i>',
-      name: "Dashboard",
-    },
-    {
-      icon: '<i class="fa-solid fa-layer-group"></i>',
-      name: "Projects",
-    },
-    {
-      icon: '<i class="fa-solid fa-calendar"></i>',
-      name: "Calendar",
-    },
-    {
-      icon: '<i class="fa-solid fa-plane-up"></i>',
-      name: "Vacations",
-    },
-    {
-      icon: '<i class="fa-solid fa-user-group"></i>',
-      name: "Employees",
-    },
-  ];
+  // const menu = [
+  //   {
+  //     icon: '<i class="fa-solid fa-grip"></i>',
+  //     name: "Dashboard",
+  //   },
+  //   {
+  //     icon: '<i class="fa-solid fa-layer-group"></i>',
+  //     name: "Projects",
+  //   },
+  //   {
+  //     icon: '<i class="fa-solid fa-calendar"></i>',
+  //     name: "Calendar",
+  //   },
+  //   {
+  //     icon: '<i class="fa-solid fa-plane-up"></i>',
+  //     name: "Vacations",
+  //   },
+  //   {
+  //     icon: '<i class="fa-solid fa-user-group"></i>',
+  //     name: "Employees",
+  //   },
+  // ];
   const [animate, setAnimate] = useState(false);
   const iconRef = useRef(null);
 
@@ -130,6 +130,7 @@ function ProjectsMainPage() {
           </div>
         </div>
         <div className="right-content">
+          {/* Shuyerda */}
           <div className="right-content_left">
             <div className="content-left-first">
               <div>

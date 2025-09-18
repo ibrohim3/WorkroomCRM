@@ -1,0 +1,82 @@
+.sidebar-con .move-btn {
+  background-color: transparent;
+  border: none;
+  font-weight: 700;
+  font-size: 22px;
+  color: #0a1629;
+  margin: 0 0 20px 10px;
+  cursor: pointer;
+}
+.sidebar-con .move-btn i {
+  color: #3f8cff;
+  font-size: 18px;
+  margin-right: 5px;
+}
+.sidebar a {
+  text-decoration: none;
+  color: #7d8592;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+}
+
+.sidebar {
+  background-color: #ffffff;
+  border-radius: 30px;
+  /* margin-top: 25px; */
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 40px;
+  width: 250px;
+  height: 95vh;
+}
+
+.sidebar .sidebar-path {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+}
+
+.sidebar-path a {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 8px;
+  width: 220px;
+  margin: 0;
+  border-radius: 10px;
+}
+.sidebar-path a:hover {
+  background-color: #5997f31e;
+  color: #007bffa2;
+}
+.sidebar-path a.active {
+  position: relative;
+  color: #007bff;
+  background-color: rgba(235, 243, 255, 255);
+  transition: 0.5s ease;
+}
+.sidebar-path a.active::before {
+  border: 2px;
+  content: "";
+  position: absolute;
+  right: -26px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #007bff;
+  border-radius: 2px;
+}
+
+#sidebar-active {
+  /* background-color: rgba(235, 243, 255, 255); */
+  padding: 11px 8px;
+  width: 172px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+}

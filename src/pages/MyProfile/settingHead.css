@@ -1,0 +1,48 @@
+.buttons-group2 {
+  position: relative;
+  display: flex;
+  width: 460px;
+  height: 48px;
+  background-color: #e6edf5;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 33.33%;
+  background-color: #3b82f6;
+  border-radius: 9999px;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.slider2.projects {
+  transform: translateX(0%);
+}
+.slider2.team {
+  transform: translateX(100%);
+}
+.slider2.myVacations {
+  transform: translateX(200%);
+}
+.btn2.active {
+  color: #fff;
+}

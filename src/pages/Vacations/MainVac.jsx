@@ -8,11 +8,11 @@ function MainVac() {
   const navigate = useNavigate();
 
   function movePage() {
-    navigate("/vacations/calendar-vacations"); // to‘liq path
+    navigate("/vacations/calendar-vacations");
   }
 
   function moveToEmployees() {
-    navigate("/vacations"); // qaytish uchun
+    navigate("/vacations");
   }
 
   return (
@@ -20,7 +20,7 @@ function MainVac() {
       <VacationsHead onMovePage={movePage} onMoveEmployees={moveToEmployees} />
 
       <Routes>
-        <Route path="" element={<Vacations />} /> {/* Default page */}
+        <Route path="" element={<Vacations />} />
         <Route path="calendar-vacations" element={<CalendarVacations />} />
       </Routes>
     </div>
