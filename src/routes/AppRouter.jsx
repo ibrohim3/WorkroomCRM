@@ -17,7 +17,7 @@ function AppRouter({ isLoggedIn }) {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/main-page" element={<ProjectsMainPage />} />
         <Route path="/projects" element={<Projects />} />
-        {/* <Route path="/employes" element={<Employees />} /> */}
+        <Route path="/employes" element={<Employees />} />
         {/* <Route
           path="/projects"
           element={isLoggedIn ? <Projects /> : <Navigate to="/add-projects" />}
@@ -26,7 +26,7 @@ function AppRouter({ isLoggedIn }) {
         <Route path="main-page" element={<ProjectsMainPage />} />
         <Route path="/calendar" element={<Calendar />} />
 
-        {/* <Route path="/vacations/*" element={<MainVac />} /> */}
+        <Route path="/vacations/*" element={<MainVac />} />
 
         {/* My Profile  */}
         <Route path="/my-profile/*" element={<MyProfile />} />
