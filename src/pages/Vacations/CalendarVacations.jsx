@@ -96,7 +96,7 @@ function Legend() {
   return (
     <div className="legend">
       <div className="legend-item">
-        <div className="legend-swatch vacation"></div>
+        <div className="legend-swatch vacation approved"></div>
         <span>Vacation — Approved</span>
       </div>
       <div className="legend-item">
@@ -104,7 +104,7 @@ function Legend() {
         <span>Vacation — Pending</span>
       </div>
       <div className="legend-item">
-        <div className="legend-swatch sick"></div>
+        <div className="legend-swatch sick approved"></div>
         <span>Sick — Approved</span>
       </div>
       <div className="legend-item">
@@ -112,7 +112,7 @@ function Legend() {
         <span>Sick — Pending</span>
       </div>
       <div className="legend-item">
-        <div className="legend-swatch remote"></div>
+        <div className="legend-swatch remote approved"></div>
         <span>Work remotely — Approved</span>
       </div>
     </div>
@@ -121,39 +121,36 @@ function Legend() {
 
 function EmployeeRow({ employee }) {
   return (
-    <div className="employee-card">
-      <div className="employee-info">
-        <div className="employee-avatar">{employee.avatarText}</div>
-        <div className="employee-text">{employee.name}</div>
+    <div className="employee-row">
+      <div className="employee-left">
+        <div className="avatar">{employee.avatarText}</div>
+        <div className="employee-name">{employee.name}</div>
       </div>
 
       <div
-        className="employee-days-grid"
+        className="employee-days"
         style={{
           gridTemplateColumns: `repeat(${DAYS_IN_MONTH}, 1fr)`,
         }}
       >
-        {/* fon uchun bo‘sh kataklar */}
         {Array.from({ length: DAYS_IN_MONTH }, (_, i) => (
-          <div key={i} className="day-cell-bg" />
+          <div key={i} className="day-bg" />
         ))}
 
-        {/* ta’til bloklari */}
         {employee.leaves.map((leave, idx) => {
-          const start = leave.start;
-          const end = leave.end;
-          const classes = `leave-tag ${leave.type} ${
-            leave.status === "pending" ? "pending" : "approved"
+          const { start, end, type, status } = leave;
+          const classes = `leave-block ${type} ${
+            status === "pending" ? "pending" : "approved"
           }`;
-
           return (
             <div
               key={idx}
               className={classes}
               style={{
-                gridColumn: `${start} / ${end + 1}`,
+                gridColumnStart: start,
+                gridColumnEnd: end + 1,
               }}
-              title={`${leave.type} (${leave.status}) — ${start}–${end}`}
+              title={`${type} (${status}) — ${start}–${end}`}
             />
           );
         })}
@@ -182,4 +179,5 @@ function CalendarVacations() {
     </div>
   );
 }
+
 export default CalendarVacations;

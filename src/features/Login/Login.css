@@ -188,6 +188,8 @@ form {
   border: none;
   border-radius: 15px;
   cursor: pointer;
+  display: block;
+  margin: 0 auto;
 }
 .right__button:hover:active {
   transform: scale(0.98);
