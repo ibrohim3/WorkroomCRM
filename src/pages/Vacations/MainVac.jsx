@@ -21,7 +21,7 @@ function MainVac() {
 
       <Routes>
         <Route path="" element={<Vacations />} />
-        {/* <Route path="calendar-vacations" element={<CalendarVacations />} /> */}
+        <Route path="calendar-vacations" element={<CalendarVacations />} />
       </Routes>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Header from "./components/Header/Header";
@@ -8,26 +8,22 @@ import LoginPage2 from "./features/Login/LoginPage2";
 import LoginPage3 from "./features/Login/LoginPage3";
 import LoginPage4 from "./features/Login/LoginPage4";
 import FinalyPage from "./features/Login/LoginFinalPage";
-import ProjectsMainPage from "./pages/AddProjects/ProjectsMainPage";
-import AddProjects from "./pages/AddProjects/AddProjects";
 import AppRouter from "./routes/AppRouter";
 
 import "./components/styles/global.css";
 import "./App.css";
 
-export default function App() {
+function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    const loggedIn = localStorage.getItem("isLoggedIn");
-    const storedProjects = JSON.parse(localStorage.getItem("projects")) || [];
-    if (loggedIn === "true") setIsLoggedIn(true);
-    setProjects(storedProjects);
+    const loggedIn = localStorage.getItem("isLoggedIn") === "true";
+    if (loggedIn) setIsLoggedIn(true);
   }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("hasCreatedProject");
     setIsLoggedIn(false);
   };
 
@@ -40,16 +36,17 @@ export default function App() {
             <Header />
             <AppRouter />
             <Routes>
-              <Route path="/" element={<Navigate to="/dashboard" replace />} />
-
               <Route
-                path="/projects"
+                path="/"
                 element={
-                  projects.length > 0 ? (
-                    <ProjectsMainPage projects={projects} />
-                  ) : (
-                    <AddProjects setProjects={setProjects} />
-                  )
+                  <Navigate
+                    to={
+                      localStorage.getItem("hasCreatedProject") === "false"
+                        ? "/projects/newProject"
+                        : "/dashboard"
+                    }
+                    replace
+                  />
                 }
               />
             </Routes>
@@ -65,10 +62,14 @@ export default function App() {
           <Route path="/page2" element={<LoginPage2 />} />
           <Route path="/page3" element={<LoginPage3 />} />
           <Route path="/page4" element={<LoginPage4 />} />
-          <Route path="/FinalPage" element={<FinalyPage />} />
+          <Route
+            path="/FinalPage"
+            element={<FinalyPage onLogin={() => setIsLoggedIn(true)} />}
+          />
           <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
       )}
     </BrowserRouter>
   );
 }
+export default App;

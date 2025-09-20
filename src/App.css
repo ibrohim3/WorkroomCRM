@@ -23,6 +23,9 @@ body {
   background: #f4f9fd;
   align-items: stretch;
   min-height: 100vh;
+  max-width: 1920px;
+  min-width: 1200px;
+  margin: 0 auto;
 }
 
 .layout .main {

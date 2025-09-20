@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Avatar from "react-avatar";
 import "./Employees.css";
 import { useNavigate } from "react-router-dom";
-
 const AddEmployeeModal = ({ onClose }) => {
   return (
     <div className="employees-overlay">
@@ -10,10 +9,10 @@ const AddEmployeeModal = ({ onClose }) => {
         <button className="close-btn" onClick={onClose}>
           ×
         </button>
-        <h2>Add Employee</h2>
-        <div className="modal-content">
+        <div className="employ-modal-content">
+          <h2>Add Employee</h2>
           <img
-            src="illustration (2).png"
+            src="/illustration (2).png"
             alt="Illustration"
             className="illustration"
           />
@@ -32,6 +31,7 @@ const AddEmployeeModal = ({ onClose }) => {
 };
 
 const Employees = () => {
+  const [active, setActive] = useState("projects");
   const [activeTab, setActiveTab] = useState("list");
   const [selectedEmployee, setSelectedEmployee] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -133,14 +133,22 @@ const Employees = () => {
         tasks: 34,
         active: 13,
         priority: "Medium",
+        image: "/Image (8).png",
       },
       {
         name: "Food Delivery Service",
         tasks: 50,
         active: 24,
         priority: "Medium",
+        image: "/Image (8).png",
       },
-      { name: "Internal Project", tasks: 23, active: 20, priority: "Low" },
+      {
+        name: "Internal Project",
+        tasks: 23,
+        active: 20,
+        priority: "Low",
+        image: "/Companylogo.png",
+      },
     ],
   };
 
@@ -209,112 +217,116 @@ const Employees = () => {
               ))}
             </div>
           ) : (
-            <div className="activity-view">
-              {employeesList.map((emp, idx) => (
-                <div
-                  className="activity-card"
-                  key={idx}
-                  onClick={() => handleCardClick(exampleEmployee)}
-                >
-                  <Avatar name={emp.name} size="50" round={true} />
-                  <h4>{emp.name}</h4>
-                  <p>{emp.position}</p>
-                  <span className="tag">{emp.level}</span>
-                  <div className="task-info">
-                    <div>
-                      <p>0</p>
-                      <span>
-                        Backlog <br /> tasks
-                      </span>
+            <div className="view-go">
+              <div className="activity-view">
+                {employeesList.map((emp, idx) => (
+                  <div
+                    className="activity-card"
+                    key={idx}
+                    onClick={() => handleCardClick(exampleEmployee)}
+                  >
+                    <div className="df">
+                      <Avatar name={emp.name} size="50" round={true} />
+                      <h4>{emp.name}</h4>
+                      <p>{emp.position}</p>
+                      <span className="tag">{emp.level}</span>
                     </div>
-                    <div>
-                      <p>16</p>
-                      <span>
-                        Tasks <br /> In Progress
-                      </span>
-                    </div>
-                    <div>
-                      <p>6</p>
-                      <span>
-                        Tasks <br /> In Review
-                      </span>
+                    <div className="task-info">
+                      <div>
+                        <p>0</p>
+                        <span>
+                          Backlog <br /> tasks
+                        </span>
+                      </div>
+                      <div>
+                        <p>16</p>
+                        <span>
+                          Tasks <br /> In Progress
+                        </span>
+                      </div>
+                      <div>
+                        <p>6</p>
+                        <span>
+                          Tasks <br /> In Review
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           )}
         </>
       ) : (
         <div className="profile-view">
           <div>
-            {/* ✅ O'ZGARTIRILGAN QATOR: */}
-            <button
-              className="back-btn"
-              onClick={() => setSelectedEmployee(null)}
-            >
-              ← Back
-            </button>
             <h2>Employee’s Profile</h2>
           </div>
           <div className="nm">
-            <div>
-              <div className="profile-header">
-                <div>
-                  <Avatar name={selectedEmployee.name} size="80" round={true} />
-                  <h2>{selectedEmployee.name}</h2>
-                  <p>{selectedEmployee.position}</p>
+            <div className="profile-info">
+              <div className="info-head">
+                <div className="user">
+                  <img src="/photo.png" alt="user image" loading="lazy" />
+                  <h3>Evan Yates</h3>
+                  <p>UI/UX Designer</p>
+                  <hr />
+                </div>
+                <div className="changer-btn">
+                  <i className="fa-regular fa-pen-to-square"></i>
                 </div>
               </div>
-
-              <div className="profile-form">
-                <h3>Main info</h3>
-
-                <div className="profile-input">
-                  <label>Position</label>
-                  <input type="text" placeholder="UI/UX Designer" />
-                </div>
-
-                <div className="profile-input">
-                  <label>Company</label>
-                  <input type="text" placeholder="Cadabra" />
-                </div>
-
-                <div className="profile-input">
-                  <label>Location</label>
-                  <input type="text" placeholder="NYC, New York, USA" />
-                </div>
-
-                <div className="profile-input">
-                  <label>Birthday Date</label>
-                  <input type="date" />
-                </div>
-
-                <h3>Contact Info</h3>
-
-                <div className="profile-input">
-                  <label>Email</label>
-                  <input type="email" placeholder="evanyates@gmail.com" />
-                </div>
-
-                <div className="profile-input">
-                  <label>Mobile Number</label>
-                  <input type="tel" placeholder="+1 675 346 23-10" />
-                </div>
-
-                <div className="profile-input">
-                  <label>Skype</label>
-                  <input type="text" placeholder="Evan 2256" />
-                </div>
+              <div className="main-info">
+                <form className="form">
+                  <h4>Main Info</h4>
+                  <div className="main-info-group">
+                    <label htmlFor="position">Position</label>
+                    <input type="text" defaultValue={"UI/UX Designer"} />
+                    <label htmlFor="company">Company</label>
+                    <input type="text" defaultValue={"Cadabra"} />
+                    <label htmlFor="company">Location</label>
+                    <input type="text" defaultValue={"NYC, New York, USA"} />
+                    <label htmlFor="company">Birthday Date</label>
+                    <input type="date" defaultValue={"1990-01-01"} />
+                  </div>
+                </form>
+                <form className="form">
+                  <h4>Contact Info</h4>
+                  <div className="contact-info">
+                    <label htmlFor="position">Email</label>
+                    <input type="text" defaultValue={"evanyates@gmail.com"} />
+                    <label htmlFor="company">Mobile Number</label>
+                    <input type="text" defaultValue={"+1 675 346 23-10"} />
+                    <label htmlFor="company">Skype</label>
+                    <input type="text" defaultValue={"Evan 2256"} />
+                  </div>
+                </form>
               </div>
             </div>
 
-            <div className="projects-section section">
+            <div className="projects-section section2">
               <div className="project-inputs">
-                <div className="project-btn">
-                  <button className="project-btn">Projects</button>
-                  <button>Team</button>
-                  <button>My vacations</button>
+                <div className="buttons-group2">
+                  <div className={`slider2 ${active}`}></div>
+
+                  <button
+                    className={`btn ${active === "projects" ? "active" : ""}`}
+                  >
+                    Projects
+                  </button>
+
+                  <button
+                    className={`btn ${active === "team" ? "active" : ""}`}
+                  >
+                    Team
+                  </button>
+
+                  <button
+                    className={`btn ${
+                      active === "myVacations" ? "active" : ""
+                    }`}
+                  >
+                    My Vacations
+                  </button>
                 </div>
                 <div>
                   <div className="project-select-wrapper">
@@ -333,7 +345,7 @@ const Employees = () => {
                     <div>
                       <div className="project-ids">
                         <div>
-                          <img src="/Image (9).png" alt="icon" />
+                          <img src={project.image} alt={project.name} />
                         </div>
                         <div>
                           <div className="project-id">
@@ -343,7 +355,7 @@ const Employees = () => {
                         </div>
                       </div>
                       <div className="project-header">
-                        <p className="created-date">📅 Created N/A</p>
+                        <p className="created-date">📅 Created Sep 12, 2020</p>
                         <div
                           className={`priority-badge ${project.priority.toLowerCase()}`}
                         >

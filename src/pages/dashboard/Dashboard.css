@@ -1,9 +1,3 @@
-/* Umumiy layout */
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-} */
 .dashboard {
   display: flex;
   justify-content: space-between;
@@ -27,7 +21,7 @@
   padding: 20px;
   width: 100%;
   height: 100%;
-  margin: auto;
+  margin: 0 auto;
 }
 
 /* Grid layout: 2 ustun 2 qator */
@@ -119,10 +113,12 @@
 .person-btn {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
 }
 .person-btns {
-  /* padding: 10px; */
+  width: 46px;
+  height: 18px;
   font-size: x-small;
   font-weight: 600;
   font-size: 12px;
@@ -131,7 +127,9 @@
   text-align: center;
   background: none;
   border: 1px solid #7d8592;
+  border-radius: 4px;
   color: #7d8592;
+  cursor: pointer;
 }
 .person-info p {
   margin: 5px 0 2px;
