@@ -4,11 +4,11 @@ import ProfileInfo from "./ProfileInfo";
 import "./myProfile.css";
 import SettingHead from "./SettingHead";
 import SettingSidebar from "./SettingSidebar";
-
+import NotificationToggle from "./Notif/NotificationToggle";
 function MyProfile() {
   const location = useLocation();
 
-  const isSettingPage = location.pathname.endsWith("profile-setting");
+  const isSettingPage = location.pathname.includes("profile-setting");
 
   return (
     <div className="div0">
@@ -27,13 +27,25 @@ function MyProfile() {
         <ProfileInfo />
         <div className="content">
           {!isSettingPage && <SettingHead />}
-
-          {/* Nested Routes */}
           <Routes>
+            {/* profile-setting ichida sidebar va ichki sahifalar */}
+            <Route path="profile-setting/*" element={<SettingSidebar />}>
+              <Route
+                path="account"
+                element={<div>Account Settings Page</div>}
+              />
+              <Route
+                path="calendar"
+                element={<div>Calendar Settings Page</div>}
+              />
+              <Route path="notifications" element={<NotificationToggle />} />
+              {/* boshqa bo‘limlar ham shu yerga qo‘shiladi */}
+            </Route>
+
+            {/* tashqarida qolgan routelar */}
             <Route path="project" element={<div>Projects Page</div>} />
             <Route path="team" element={<div>Team Page</div>} />
             <Route path="myvacations" element={<div>My Vacations Page</div>} />
-            <Route path="/profile-setting/*" element={<SettingSidebar />} />
 
             {/* Default */}
             <Route path="*" element={<div>Projects Page</div>} />

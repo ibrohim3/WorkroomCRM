@@ -1,120 +1,133 @@
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, Outlet } from "react-router-dom";
 import "./settingSidebar.css";
+
 function SettingSidebar() {
   const navigate = useNavigate();
+
   function MovePage() {
     navigate("/my-profile");
   }
+
   return (
-    <div className="sidebar-con">
-      <button className="move-btn" onClick={MovePage}>
-        <i className="fa-solid fa-arrow-left"></i> Setting
-      </button>
-      <div className="sidebar">
-        <ul className="sidebar-path">
-          <NavLink to="account">
-            {({ isActive }) => (
-              <>
+    <div className="sidebar-layout">
+      <div className="sidebar-con">
+        <button className="move-btn" onClick={MovePage}>
+          <i className="fa-solid fa-arrow-left"></i> Setting
+        </button>
+
+        <div className="sidebar">
+          <ul className="sidebar-path">
+            <li>
+              <NavLink
+                to="account"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
                 <img
-                  src={isActive ? "/user-inactive.svg" : "/user-inactive.svg"}
-                  alt="icon"
+                  src="/user-inactive.svg"
+                  alt="Account icon"
                   width={24}
                   height={24}
                 />
                 Account
-              </>
-            )}
-          </NavLink>
+              </NavLink>
+            </li>
 
-          <NavLink to="notifications">
-            {({ isActive }) => (
-              <>
+            <li>
+              <NavLink
+                to="notifications"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
                 <img
-                  src={isActive ? "/notif-blue.svg" : "/notif-blue.svg"}
-                  alt="icon"
+                  src="/notif-blue.svg"
+                  alt="Notifications icon"
                   width={24}
                   height={24}
                 />
                 Notifications
-              </>
-            )}
-          </NavLink>
+              </NavLink>
+            </li>
 
-          <NavLink to="calendar">
-            {({ isActive }) => (
-              <>
+            <li>
+              <NavLink
+                to="my-company"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
                 <img
-                  src={
-                    isActive ? "/company-inactive.svg" : "/company-inactive.svg"
-                  }
-                  alt="icon"
+                  src="/company-inactive.svg"
+                  alt="Company icon"
                   width={24}
                   height={24}
                 />
                 My Company
-              </>
-            )}
-          </NavLink>
+              </NavLink>
+            </li>
 
-          <NavLink to="vacations">
-            {({ isActive }) => (
-              <>
+            <li>
+              <NavLink
+                to="connected-app"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
                 <img
-                  src={isActive ? "/app-inactivesvg" : "/app-inactive.svg"}
-                  alt="icon"
+                  src="/app-inactive.svg"
+                  alt="Apps icon"
                   width={24}
                   height={24}
                 />
                 Connected Apps
-              </>
-            )}
-          </NavLink>
+              </NavLink>
+            </li>
 
-          <NavLink to="employees">
-            {({ isActive }) => (
-              <>
+            <li>
+              <NavLink
+                to="payment"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
                 <img
-                  src={
-                    isActive ? "/payment-inactive.svg" : "/payment-inactive.svg"
-                  }
-                  alt="icon"
+                  src="/payment-inactive.svg"
+                  alt="Payment icon"
                   width={24}
                   height={24}
                 />
                 Payments
-              </>
-            )}
-          </NavLink>
+              </NavLink>
+            </li>
 
-          <NavLink to="messenger">
-            {({ isActive }) => (
-              <>
+            <li>
+              <NavLink
+                to="confidentiality"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
                 <img
-                  src={isActive ? "/conf-inactive.svg" : "/conf-inactive.svg"}
-                  alt="icon"
+                  src="/conf-inactive.svg"
+                  alt="Confidentiality icon"
                   width={24}
                   height={24}
                 />
                 Confidentiality
-              </>
-            )}
-          </NavLink>
+              </NavLink>
+            </li>
 
-          <NavLink to="info-portal">
-            {({ isActive }) => (
-              <>
+            <li>
+              <NavLink
+                to="safety"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
                 <img
-                  src={isActive ? "/safe-inactive.svg" : "/safe-inactive.svg"}
-                  alt="icon"
+                  src="/safe-inactive.svg"
+                  alt="Safety icon"
                   width={24}
                   height={24}
                 />
                 Safety
-              </>
-            )}
-          </NavLink>
-        </ul>
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="sidebar-content">
+        <Outlet />
       </div>
     </div>
   );

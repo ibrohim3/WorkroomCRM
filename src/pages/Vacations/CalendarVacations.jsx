@@ -1,98 +1,185 @@
 import React from "react";
 import "./calendarVacations.css";
 
+const DAYS_IN_MONTH = 30;
+
 const employees = [
-  "Oscar Holloway",
-  "Evan Yates",
-  "Lola Zimmermann",
-  "Tyler Curry",
-  "Sadie Wolfe",
-  "Sean Gibbs",
-  "Corey Watts",
-  "Theodore Shaw",
-  "Edwin Austin",
-  "Thomas Cummings",
-  "Augusta Gordon",
+  {
+    id: 1,
+    name: "Oscar Holloway",
+    avatarText: "O",
+    leaves: [
+      { type: "vacation", status: "approved", start: 1, end: 3 },
+      { type: "vacation", status: "approved", start: 6, end: 6 },
+      { type: "sick", status: "pending", start: 18, end: 21 },
+    ],
+  },
+  {
+    id: 2,
+    name: "Evan Yates",
+    avatarText: "E",
+    leaves: [{ type: "vacation", status: "approved", start: 5, end: 7 }],
+  },
+  {
+    id: 3,
+    name: "Lola Zimmerman",
+    avatarText: "L",
+    leaves: [{ type: "sick", status: "approved", start: 8, end: 11 }],
+  },
+  {
+    id: 4,
+    name: "Tyler Curry",
+    avatarText: "T",
+    leaves: [{ type: "remote", status: "approved", start: 9, end: 12 }],
+  },
+  {
+    id: 5,
+    name: "Sadie Wolfe",
+    avatarText: "S",
+    leaves: [{ type: "vacation", status: "approved", start: 23, end: 26 }],
+  },
+  {
+    id: 6,
+    name: "Sean Gibbs",
+    avatarText: "Se",
+    leaves: [{ type: "vacation", status: "approved", start: 27, end: 27 }],
+  },
+  {
+    id: 7,
+    name: "Corey Watts",
+    avatarText: "C",
+    leaves: [{ type: "remote", status: "approved", start: 12, end: 15 }],
+  },
+  {
+    id: 8,
+    name: "Theodore Shaw",
+    avatarText: "Th",
+    leaves: [{ type: "remote", status: "approved", start: 6, end: 9 }],
+  },
+  {
+    id: 9,
+    name: "Edwin Austin",
+    avatarText: "E",
+    leaves: [{ type: "sick", status: "approved", start: 16, end: 17 }],
+  },
+  {
+    id: 10,
+    name: "Thomas Cummings",
+    avatarText: "T",
+    leaves: [{ type: "vacation", status: "pending", start: 11, end: 14 }],
+  },
+  {
+    id: 11,
+    name: "Augusta Gordon",
+    avatarText: "A",
+    leaves: [{ type: "vacation", status: "approved", start: 24, end: 28 }],
+  },
 ];
 
-const daysInMonth = 28; // bu joyni o'zingiz moslashingiz mumkin
-
-function DayCells({ rowIndex }) {
+function DayHeader() {
+  const days = Array.from({ length: DAYS_IN_MONTH }, (_, i) => i + 1);
   return (
-    <div className="cells-row">
-      {Array.from({ length: daysInMonth }, (_, i) => (
-        <div key={i} className="cell">
-          {/* Bu joyga kerakli badge yoki data qo‘shiladi */}
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function CalendarVacation() {
-  return (
-    <div className="schedule-wrap">
-      <div className="schedule-card">
-        <div className="header">
-          <h3>Employee Schedule</h3>
-        </div>
-
-        <div className="main">
-          {/* Sidebar */}
-          <div className="sidebar">
-            <div className="search">
-              Employees <input placeholder="Search" />
-            </div>
-            <ul className="employee-list">
-              {employees.map((name, idx) => (
-                <li key={idx} className="employee-row">
-                  <div className="avatar" />
-                  <div className="emp-name">{name}</div>
-                </li>
-              ))}
-            </ul>
+    <div className="calendar-header">
+      <div className="left-col-title">Employees</div>
+      <div className="days-row">
+        {days.map((d) => (
+          <div key={d} className="day-cell">
+            <div className="day-number">{d}</div>
           </div>
-
-          {/* Grid Area */}
-          <div className="grid-area">
-            <div className="days-head">
-              {Array.from({ length: daysInMonth }, (_, i) => (
-                <div key={i} className="day-cell">
-                  {i + 1}
-                </div>
-              ))}
-            </div>
-
-            <div className="rows">
-              {employees.map((_, idx) => (
-                <div key={idx} className="row">
-                  <DayCells rowIndex={idx} />
-                </div>
-              ))}
-            </div>
-
-            {/* Legend */}
-            <div className="legend">
-              <div>
-                <span className="legend-dot sick approved" /> Sick Leave
-                Approved
-              </div>
-              <div>
-                <span className="legend-dot remote approved" /> Work remotely
-                Approved
-              </div>
-              <div>
-                <span className="legend-dot vacation approved" /> Vacation
-                Approved
-              </div>
-              <div>
-                <span className="legend-dot remote pending" /> Pending
-              </div>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
 }
-export default CalendarVacation;
+
+function Legend() {
+  return (
+    <div className="legend">
+      <div className="legend-item">
+        <div className="legend-swatch vacation"></div>
+        <span>Vacation — Approved</span>
+      </div>
+      <div className="legend-item">
+        <div className="legend-swatch vacation pending"></div>
+        <span>Vacation — Pending</span>
+      </div>
+      <div className="legend-item">
+        <div className="legend-swatch sick"></div>
+        <span>Sick — Approved</span>
+      </div>
+      <div className="legend-item">
+        <div className="legend-swatch sick pending"></div>
+        <span>Sick — Pending</span>
+      </div>
+      <div className="legend-item">
+        <div className="legend-swatch remote"></div>
+        <span>Work remotely — Approved</span>
+      </div>
+    </div>
+  );
+}
+
+function EmployeeRow({ employee }) {
+  return (
+    <div className="employee-card">
+      <div className="employee-info">
+        <div className="employee-avatar">{employee.avatarText}</div>
+        <div className="employee-text">{employee.name}</div>
+      </div>
+
+      <div
+        className="employee-days-grid"
+        style={{
+          gridTemplateColumns: `repeat(${DAYS_IN_MONTH}, 1fr)`,
+        }}
+      >
+        {/* fon uchun bo‘sh kataklar */}
+        {Array.from({ length: DAYS_IN_MONTH }, (_, i) => (
+          <div key={i} className="day-cell-bg" />
+        ))}
+
+        {/* ta’til bloklari */}
+        {employee.leaves.map((leave, idx) => {
+          const start = leave.start;
+          const end = leave.end;
+          const classes = `leave-tag ${leave.type} ${
+            leave.status === "pending" ? "pending" : "approved"
+          }`;
+
+          return (
+            <div
+              key={idx}
+              className={classes}
+              style={{
+                gridColumn: `${start} / ${end + 1}`,
+              }}
+              title={`${leave.type} (${leave.status}) — ${start}–${end}`}
+            />
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function CalendarVacations() {
+  return (
+    <div className="container2">
+      <div className="title-row">
+        <h2>First month (September)</h2>
+        <div className="nav-arrows">← →</div>
+      </div>
+
+      <DayHeader />
+
+      <div className="rows">
+        {employees.map((emp) => (
+          <EmployeeRow key={emp.id} employee={emp} />
+        ))}
+      </div>
+
+      <Legend />
+    </div>
+  );
+}
+export default CalendarVacations;
