@@ -9,7 +9,7 @@ import ProjectsMainPage from "../pages/AddProjects/ProjectsMainPage";
 import MainVac from "../pages/Vacations/MainVac";
 import MyProfile from "../pages/MyProfile/MyProfile";
 import Employees from "../pages/Employees/Employees";
-import NotificationToggle from "../pages/MyProfile/Notif/NotificationToggle";
+// import NotificationToggle from "../pages/MyProfile/Notif/NotificationToggle";
 
 function AppRouter({ isLoggedIn }) {
   return (

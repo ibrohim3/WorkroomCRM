@@ -9,16 +9,18 @@ function Sidebar({ onLogout }) {
     <div className="sidebar__wrapper">
       <div className="Sidebar">
         <ul className="sidebar__path">
-          <img
-            className="sidebar__main__img"
-            src="./Companylogo.png"
-            alt="img"
-            loading="lazy"
-            width={50}
-            height={50}
-          />
+          <NavLink to="dashboard" className={"exclude-link"}>
+            <img
+              className="sidebar__main__img"
+              src="./Companylogo.png"
+              alt="img"
+              loading="lazy"
+              width={50}
+              height={50}
+            />
+          </NavLink>
 
-          <NavLink to="dashboard">
+          <NavLink to="dashboard" className={"sidebar-link"}>
             {({ isActive }) => (
               <>
                 <img
@@ -36,7 +38,7 @@ function Sidebar({ onLogout }) {
             )}
           </NavLink>
 
-          <NavLink to="projects">
+          <NavLink to="projects" className={"sidebar-link"}>
             {({ isActive }) => (
               <>
                 <img
@@ -52,7 +54,7 @@ function Sidebar({ onLogout }) {
             )}
           </NavLink>
 
-          <NavLink to="calendar">
+          <NavLink to="calendar" className={"sidebar-link"}>
             {({ isActive }) => (
               <>
                 <img
@@ -70,7 +72,7 @@ function Sidebar({ onLogout }) {
             )}
           </NavLink>
 
-          <NavLink to="vacations">
+          <NavLink to="vacations" className={"sidebar-link"}>
             {({ isActive }) => (
               <>
                 <img
@@ -88,7 +90,7 @@ function Sidebar({ onLogout }) {
             )}
           </NavLink>
 
-          <NavLink to="employes">
+          <NavLink to="employes" className={"sidebar-link"}>
             {({ isActive }) => (
               <>
                 <img
@@ -106,7 +108,7 @@ function Sidebar({ onLogout }) {
             )}
           </NavLink>
 
-          <NavLink to="messenger">
+          <NavLink to="messenger" className={"sidebar-link"}>
             {({ isActive }) => (
               <>
                 <img
@@ -122,7 +124,7 @@ function Sidebar({ onLogout }) {
             )}
           </NavLink>
 
-          <NavLink to="info-portal">
+          <NavLink to="info-portal" className={"sidebar-link"}>
             {({ isActive }) => (
               <>
                 <img

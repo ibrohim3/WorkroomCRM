@@ -14,14 +14,17 @@
   display: none;
 }
 
-.Sidebar a {
+.Sidebar .sidebar-link {
   text-decoration: none;
   color: #7d8592;
   font-weight: 600;
   font-size: 16px;
   line-height: 100%;
 }
-
+.exclude-link {
+  padding: 0;
+  background: none;
+}
 .Sidebar {
   background-color: #ffffff;
   border-radius: 30px;
@@ -94,7 +97,7 @@
   transition: 0.3s ease;
 }
 
-.sidebar__path a {
+.sidebar__path .sidebar-link {
   display: flex;
   justify-content: start;
   align-items: center;
@@ -104,17 +107,17 @@
   margin: 0;
   border-radius: 10px;
 }
-.sidebar__path a:hover {
+.sidebar__path .sidebar-link:hover {
   background-color: #5997f31e;
   color: #007bffa2;
 }
-.sidebar__path a.active {
+.sidebar__path .sidebar-link.active {
   position: relative;
   color: #007bff;
   background-color: rgba(235, 243, 255, 255);
   transition: 0.5s ease;
 }
-.sidebar__path a.active::before {
+.sidebar__path .sidebar-link.active::before {
   border: 2px;
   content: "";
   position: absolute;
