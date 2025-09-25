@@ -1,0 +1,27 @@
+.info-portal {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+}
+.info-portal .first {
+  display: flex;
+  gap: 25px;
+  /* justify-content: space-between; */
+}
+.info-portal .box-2 {
+  width: 35%;
+}
+.info-portal .box {
+  background: #ffffff;
+  box-shadow: 0px 6px 58px 0px #c4cbd61a;
+  padding: 30px;
+  border-radius: 24px;
+  height: 185px;
+  max-width: 100%;
+}
+.info-portal .second {
+  display: flex;
+  gap: 25px;
+}
