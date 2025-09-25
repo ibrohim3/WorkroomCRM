@@ -108,7 +108,7 @@ function Sidebar({ onLogout }) {
             )}
           </NavLink>
 
-          <NavLink to="messenger" className={"sidebar-link"}>
+          {/* <NavLink to="messenger" className={"sidebar-link"}>
             {({ isActive }) => (
               <>
                 <img
@@ -122,7 +122,7 @@ function Sidebar({ onLogout }) {
                 Messenger
               </>
             )}
-          </NavLink>
+          </NavLink> */}
 
           <NavLink to="info-portal" className={"sidebar-link"}>
             {({ isActive }) => (
