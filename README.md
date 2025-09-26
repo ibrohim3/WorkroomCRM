@@ -20,7 +20,7 @@
 
 ---
 
-# 🚀 Workroom – React + Vite (English)
+# 🚀 Workroom – React + Vite 
 
 **Workroom** is a collaboration platform built with **React + Vite**.  
 This project was developed as a team effort, and I contributed as the **Team Lead**.
