@@ -23,7 +23,7 @@ function AppRouter({ isLoggedIn }) {
         <Route path="/employes" element={<Employees />} />
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/vacations/*" element={<MainVac />} />
-        <Route path="/info-portal" element={<InfoPortal />} />
+        <Route path="/info-portal/*" element={<InfoPortal />} />
         <Route path="/my-profile/*" element={<MyProfile />} />
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>

@@ -1,12 +1,42 @@
-# React + Vite
+# 🚀 Workroom – React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Workroom** – bu jamoaviy hamkorlik uchun yaratilgan platforma. Loyiha **React + Vite** asosida ishlab chiqilgan bo‘lib, men **Team Lead** sifatida jamoam bilan birgalikda ishlab chiqdim.
 
-Currently, two official plugins are available:
+## 📌 Texnologiyalar
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚛️ React – UI komponentlar yaratish uchun
+- ⚡ Vite – tezkor frontend build vositasi
+- 🧹 ESLint – kod sifatini nazorat qilish uchun
 
-## Expanding the ESLint configuration
+## ✨ Xususiyatlari
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Tezkor va minimal konfiguratsiya
+- Modulga asoslangan arxitektura
+- Jamoaviy ishlab chiqishga moslashgan
+
+## 🌍 Demo
+
+👉 [Workroom Live Demo](https://workroomcrm.netlify.app)
+
+---
+
+# 🚀 Workroom – React + Vite (English)
+
+**Workroom** is a collaboration platform built with **React + Vite**.  
+This project was developed as a team effort, and I contributed as the **Team Lead**.
+
+## 📌 Technologies
+
+- ⚛️ React – for building UI components
+- ⚡ Vite – fast frontend build tool
+- 🧹 ESLint – to ensure code quality
+
+## ✨ Features
+
+- Fast and minimal configuration
+- Modular architecture
+- Optimized for team-based development
+
+## 🌍 Demo
+
+👉 [Workroom Live Demo](https://workroomcrm.netlify.app)
