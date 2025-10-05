@@ -14,7 +14,6 @@
 .info-portal .first {
   display: flex;
   gap: 25px;
-  /* justify-content: space-between; */
 }
 .info-portal .box-1 {
   display: flex;

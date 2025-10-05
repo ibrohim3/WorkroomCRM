@@ -7,12 +7,12 @@ import AddNewProject from "../pages/Projects/AddNewProject";
 import ProjectsCollect from "../pages/Projects/ProjectsCollect";
 import ProjectsMainPage from "../pages/AddProjects/ProjectsMainPage";
 import MainVac from "../pages/Vacations/MainVac";
-import InfoPortal from "../pages/Info/InfoPortal";
 import MyProfile from "../pages/MyProfile/MyProfile";
 import Employees from "../pages/Employees/Employees";
+import InfoPortalMain from "../pages/Info/InfoPortalMain";
 // import NotificationToggle from "../pages/MyProfile/Notif/NotificationToggle";
 
-function AppRouter({ isLoggedIn }) {
+function AppRouter() {
   return (
     <div>
       <Routes>
@@ -23,7 +23,7 @@ function AppRouter({ isLoggedIn }) {
         <Route path="/employes" element={<Employees />} />
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/vacations/*" element={<MainVac />} />
-        <Route path="/info-portal/*" element={<InfoPortal />} />
+        <Route path="/info-portal/*" element={<InfoPortalMain />} />
         <Route path="/my-profile/*" element={<MyProfile />} />
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>

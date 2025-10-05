@@ -1,16 +1,26 @@
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 
 function InfoPortalHead() {
   const { folderName } = useParams();
+  const location = useLocation();
 
   const folderTitles = {
     medical: "Medical App",
-    fortune: "Fortune website",
+    fortune: "Fortune Website",
     planner: "Planner App",
-    tracker: "Time tracker - personal account",
+    tracker: "Time Tracker - Personal Account",
   };
 
-  const title = folderName ? folderTitles[folderName] : "Info Portal";
+  let title = "Info Portal"; // default holat (index uchun)
+
+  if (folderName && folderTitles[folderName]) {
+    title = folderTitles[folderName];
+  }
+
+  // tracker path uchun params yo‘q bo‘lishi mumkin, shuning uchun location bilan tekshiramiz
+  if (location.pathname === "/tracker") {
+    title = folderTitles.tracker;
+  }
 
   return (
     <div className="header info-portal-head">

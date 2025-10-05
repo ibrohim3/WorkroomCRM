@@ -1,23 +1,15 @@
-import { Routes, Route, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import infoImage from "../../assets/images/info.svg";
 import folder1 from "../../assets/icons/folder-1.svg";
 import folder2 from "../../assets/icons/folder-2.svg";
 import folder3 from "../../assets/icons/folder-3.svg";
 import folder4 from "../../assets/icons/folder-4.svg";
 import statistics from "../../assets/icons/statistics.svg";
-import InfoPortalHead from "./InfoPortalHead";
 import "./infoPortal.css";
-import PersonalAcc from "./Files/PersonalAcc";
 
 function Info() {
   return (
     <>
-      <Routes>
-        <Route index element={<InfoPortalHead />} />
-        <Route path=":folderName" element={<InfoPortalHead />} />
-        <Route path="tracker" element={<PersonalAcc />} />
-      </Routes>
-
       <div className="info-portal">
         <div className="first">
           <div className="box-1 box">
