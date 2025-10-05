@@ -8,7 +8,6 @@ function VacationsHead({ onMoveEmployees, onMovePage }) {
     <header className="vac-header">
       <h2>Vacations</h2>
       <div className="buttons-group">
-        {/* sliding background */}
         <div className={`slider ${activeTab}`} />
 
         <button

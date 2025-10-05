@@ -75,7 +75,7 @@ function Info() {
             </div>
             <div className="text-box">
               <h3>Time tracker - personal…</h3>
-              <p>2 pages</p>
+              <p>0 pages</p>
             </div>
           </NavLink>
         </div>

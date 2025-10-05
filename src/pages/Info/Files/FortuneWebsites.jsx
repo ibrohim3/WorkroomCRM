@@ -1,6 +1,5 @@
 import "./Files.css";
-
-function PersonalAcc() {
+function FortuneWebsites() {
   return (
     <div className="file">
       <h2>No data available.</h2>
@@ -8,4 +7,4 @@ function PersonalAcc() {
   );
 }
 
-export default PersonalAcc;
+export default FortuneWebsites;

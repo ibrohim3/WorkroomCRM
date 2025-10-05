@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Avatar from "react-avatar";
 import "./Employees.css";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 const AddEmployeeModal = ({ onClose }) => {
   return (
     <div className="employees-overlay">
@@ -159,21 +159,27 @@ const Employees = () => {
           <div className="employees-headers">
             <h2>Employees</h2>
             <div className="tabs">
+              <div
+                className={`slider ${
+                  activeTab === "list" ? "list" : "activity"
+                }`}
+              ></div>
               <button
                 id="tabs-list"
-                className={activeTab === "list" ? "active" : ""}
+                className={`btn ${activeTab === "list" ? "active" : ""}`}
                 onClick={() => handleTabChange("list")}
               >
                 List
               </button>
               <button
                 id="tabs-activity"
-                className={activeTab === "activity" ? "active" : ""}
+                className={`btn ${activeTab === "activity" ? "active" : ""}`}
                 onClick={() => handleTabChange("activity")}
               >
                 Activity
               </button>
             </div>
+
             <button className="add-btn" onClick={() => setIsModalOpen(true)}>
               + Add Employee
             </button>

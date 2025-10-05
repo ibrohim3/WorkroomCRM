@@ -43,22 +43,27 @@
   width: 50%;
   background-color: #3b82f6;
   border-radius: 9999px;
-  transition: transform 0.3s ease;
+  transition: left 0.3s ease;
   z-index: 1;
 }
 
 .slider.employees {
-  transform: translateX(0%);
+  left: 0;
 }
 
 .slider.calendar {
-  transform: translateX(100%);
+  left: 55%;
 }
 
 .btn.active {
   color: #fff;
+  background-color: #3b82f6;
+  height: 100%;
+  border-radius: 9999px;
 }
-
+.btn:hover {
+  opacity: 100% !important;
+}
 .add-request {
   height: 48px;
   width: 165px;

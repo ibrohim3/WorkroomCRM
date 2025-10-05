@@ -14,47 +14,52 @@ body {
   align-items: center;
   width: 100%;
 }
-
+/* Slider btn */
 .tabs {
+  position: relative;
   display: flex;
-  width: 310px;
-  height: 48px;
-  background-color: #e6edf5;
-  border-radius: 30px;
+  background: #f0f0f0;
+  border-radius: 9999px;
+  padding: 4px;
+  width: 260px;
+  height: 50px;
   align-items: center;
-  justify-content: center;
-}
-#tabs-list {
-  width: 151px;
-  height: 40px;
-  border-radius: 20px;
-  border: none;
-  background: none;
-  color: #0a1629;
-  cursor: pointer;
-}
-#tabs-activity {
-  width: 151px;
-  height: 40px;
-  border-radius: 20px;
-  border: none;
-  background: none;
-  color: #0a1629;
-  cursor: pointer;
+  justify-content: space-between;
 }
 
-#tabs-list:hover {
-  color: white;
-  background-color: #2e88ff;
-}
-#tabs-activity:hover {
-  color: white;
-  background-color: #2e88ff;
+.btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  z-index: 2;
+  cursor: pointer;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-.tabs .active {
-  background: #2e88ff;
-  color: white;
+.btn.active {
+  color: #fff;
+}
+
+.slider {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  height: calc(100% - 8px);
+  width: calc(50% - 8px);
+  background-color: #3b82f6;
+  border-radius: 9999px;
+  transition: left 0.3s ease;
+  z-index: 1;
+}
+
+.slider.list {
+  left: 4px;
+}
+
+.slider.activity {
+  left: 50%;
 }
 
 .add-btn {

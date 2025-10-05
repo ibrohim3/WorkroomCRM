@@ -9,19 +9,10 @@
   --pending-outline: rgba(0, 0, 0, 0.12);
 }
 
-/* body {
-  margin: 0;
-  font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  padding: 20px;
-} */
-
 .container2 {
   /* max-width: 1200px; */
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .title-row {
