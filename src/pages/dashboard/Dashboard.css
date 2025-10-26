@@ -249,8 +249,10 @@
 .fullscreen-view {
   padding: 30px;
   background-color: #ffffff;
-  min-height: 100vh;
+  min-height: 100%;
   position: relative;
+  border-radius: 22px;
+  margin: 0 20px;
 }
 
 .fullscreen-view h2 {
